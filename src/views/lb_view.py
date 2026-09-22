@@ -19,11 +19,13 @@ class LogBotView(QMainWindow):
         self.ui.btn_start.clicked.connect(
             self.start_log_bot
         )
+        self.ui.btn_stop.clicked.connect(self.stop_log_bot)
 
         self.load_ui()
 
     def start_log_bot(self):
         print("Iniciando Log Bot...")
+        self.__save_config()
 
         resolution = self.ui.Combo_Resolution.currentText()
         coords = self.ui.Combo_Resolution.currentData()
@@ -33,10 +35,15 @@ class LogBotView(QMainWindow):
         print("Coords:", coords)
         print("Webhook:", webhook)
 
-        # self.ui.btn_start.setDisabled(True)
-        # self.ui.btn_stop.setDisabled(False)
+        self.ui.btn_start.setDisabled(True)
+        self.ui.btn_stop.setDisabled(False)
 
         self.log_bot_vm.start_log_bot(coords, webhook)
+
+    def stop_log_bot(self):
+        self.log_bot_vm.stop_log_bot()
+        self.ui.btn_start.setDisabled(False)
+        self.ui.btn_stop.setDisabled(True)
 
     def load_ui(self):
         self.config = self.log_bot_vm.config.load_config()
@@ -57,3 +64,8 @@ class LogBotView(QMainWindow):
         self.ui.LineEdit_webhook.setText(
             self.webhook
         )
+
+    def __save_config(self):
+        self.config["last_resolution"] = self.ui.Combo_Resolution.currentText()
+        self.config["webhook"] = self.ui.LineEdit_webhook.text()
+        self.log_bot_vm.config.save_config(self.config)

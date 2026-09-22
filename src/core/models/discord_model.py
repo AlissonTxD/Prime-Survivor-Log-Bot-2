@@ -7,7 +7,6 @@ from .base_model import BaseModel
 
 
 class DiscordModel(BaseModel):
-
     def __init__(self, webhook_url):
         super().__init__()
 
@@ -26,10 +25,7 @@ class DiscordModel(BaseModel):
                 self.webhook_url,
                 json={
                     "name": self.webhook_name,
-                    "avatar": (
-                        f"data:image/png;base64,"
-                        f"{image_base64}"
-                    ),
+                    "avatar": (f"data:image/png;base64,{image_base64}"),
                 },
             )
 
@@ -50,9 +46,7 @@ class DiscordModel(BaseModel):
             # Envia a mensagem
             response = requests.post(
                 self.webhook_url,
-                json={
-                    "content": text
-                },
+                json={"content": text},
             )
 
             response.raise_for_status()
@@ -63,13 +57,7 @@ class DiscordModel(BaseModel):
             with open(self.subimage_path, "rb") as image:
                 response = requests.post(
                     self.webhook_url,
-                    files={
-                        "file": (
-                            "subimage.png",
-                            image,
-                            "image/png"
-                        )
-                    },
+                    files={"file": ("subimage.png", image, "image/png")},
                 )
 
             response.raise_for_status()

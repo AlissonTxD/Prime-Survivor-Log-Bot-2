@@ -24,6 +24,7 @@ class ValidationModel(BaseModel):
 
             ignore_words = [
                 "Baby",
+                "Juvenile",
                 "decay",
                 "Karkinos"
             ]
