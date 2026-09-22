@@ -1,20 +1,19 @@
 import logging
 import os
-from time import sleep
 
 import mss
 from PIL import Image, ImageEnhance
 
+from .base_model import BaseModel
+
 IMG_FACTORS = (2.0, 0.5, 1.0, 2.5)
-LOG_SUBIMAGE_PATH = "temp/subimage.png"
-DELEY_BETWEEN_MESSAGES_SECONDS = 15
 
 
-class ImageModel:
-    def __init__(self):
-        pass
-
+class ImageModel(BaseModel):
     def generate_image_from_coords(self, cut_coords):
+        print(cut_coords)
+        print(cut_coords[0])
+        print(type(cut_coords[0]))
         try:
             os.makedirs("temp", exist_ok=True)
 
@@ -32,26 +31,19 @@ class ImageModel:
                 screenshot = sct.grab(monitor)
 
                 mss.tools.to_png(
-                    screenshot.rgb, screenshot.size, output=LOG_SUBIMAGE_PATH
+                    screenshot.rgb, screenshot.size, output=self.subimage_path
                 )
 
             # Ajustes de imagem para OCR
-            img = Image.open(LOG_SUBIMAGE_PATH).convert("RGB")
+            img = Image.open(self.subimage_path).convert("RGB")
             img = ImageEnhance.Contrast(img).enhance(IMG_FACTORS[0])
             img = ImageEnhance.Color(img).enhance(IMG_FACTORS[1])
             img = ImageEnhance.Brightness(img).enhance(IMG_FACTORS[2])
             img = ImageEnhance.Sharpness(img).enhance(IMG_FACTORS[3])
             img = img.resize((img.width * 2, img.height * 2), Image.LANCZOS)
-            img.save(LOG_SUBIMAGE_PATH)
+            img.save(self.subimage_path)
 
-            logging.info(f"Imagem gerada em {LOG_SUBIMAGE_PATH}")  # noqa: LOG015
+            logging.info(f"Imagem gerada em {self.subimage_path}")  # noqa: LOG015
 
         except Exception as e:  # noqa: BLE001
             logging.error(f"Erro ao gerar imagem: {e}")  # noqa: LOG015
-
-
-if __name__ == "__main__":
-    # teste
-    image_model = ImageModel()
-    sleep(2)
-    image_model.generate_image_from_coords((1016, 266, 1544, 634))

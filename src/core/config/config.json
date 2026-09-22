@@ -1,0 +1,24 @@
+{
+    "webhook": "https://discord.com/api/webhooks/1551942394050777108/VYrXMhQ6bWGXQAqlSTyIPm3vkWf-nOm-QxOAqlhYOTdQYUEcN7GLQVz8AwRsF5HCPUld",
+    "resolution": {
+        "1920x1080": [
+            770,
+            214,
+            1125,
+            255
+        ],
+        "2560x1440": [
+            1016,
+            266,
+            1520,
+            583
+        ],
+        "3440x1440": [
+            1475,
+            283,
+            1945,
+            339
+        ]
+    },
+    "last_resolution": "2560x1440"
+}
