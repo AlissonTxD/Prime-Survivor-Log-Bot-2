@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(950, 637)
+        MainWindow.resize(1000, 800)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\Alisson\\Documents\\projetos\\Prime-Survivor-Log-Bot-2\\src\\views\\ui\\../../assets/logbot.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -77,13 +77,17 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.imagemlogo)
         self.green_frame = QtWidgets.QFrame(self.centralwidget)
         self.green_frame.setMinimumSize(QtCore.QSize(0, 130))
-        self.green_frame.setMaximumSize(QtCore.QSize(16777215, 130))
+        self.green_frame.setMaximumSize(QtCore.QSize(16777215, 300))
         self.green_frame.setStyleSheet("/*background-color: rgb(0, 255, 42);")
         self.green_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.green_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.green_frame.setObjectName("green_frame")
         self.gridLayout = QtWidgets.QGridLayout(self.green_frame)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem, 1, 0, 1, 1)
         self.label_3 = QtWidgets.QLabel(self.green_frame)
         self.label_3.setMaximumSize(QtCore.QSize(300, 16777215))
         self.label_3.setStyleSheet("QLabel {\n"
@@ -94,11 +98,42 @@ class Ui_MainWindow(object):
 "}")
         self.label_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_3.setObjectName("label_3")
-        self.gridLayout.addWidget(self.label_3, 0, 1, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 0, 3, 1, 1)
+        self.gridLayout.addWidget(self.label_3, 1, 1, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.green_frame)
+        self.label_4.setStyleSheet("QLabel {\n"
+"    color: rgb(255, 137, 1);\n"
+"    font-size: 20px;\n"
+"    font-family: \"Arial Black\";\n"
+"    background: transparent;\n"
+"}")
+        self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 2, 1, 1, 1)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem1, 0, 0, 1, 1)
+        self.gridLayout.addItem(spacerItem1, 1, 3, 1, 1)
+        self.LineEdit_webhook = QtWidgets.QLineEdit(self.green_frame)
+        self.LineEdit_webhook.setMaximumSize(QtCore.QSize(500, 16777215))
+        self.LineEdit_webhook.setStyleSheet("QLineEdit {\n"
+"border: 0px solid rgb(45, 45, 45);\n"
+"border-radius: 10px;\n"
+"padding: 15px;\n"
+"background-color: rgb(24, 24, 24);\n"
+"color: rgb(80, 80, 80);\n"
+"    font: 87 12pt \"Arial Black\";\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"border: 2px solid rgb(27, 27, 27);\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"border: 2px solid rgb(255, 137, 1);\n"
+"color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"")
+        self.LineEdit_webhook.setObjectName("LineEdit_webhook")
+        self.gridLayout.addWidget(self.LineEdit_webhook, 2, 2, 1, 1)
         self.Combo_Resolution = QtWidgets.QComboBox(self.green_frame)
         self.Combo_Resolution.setMinimumSize(QtCore.QSize(300, 0))
         self.Combo_Resolution.setMaximumSize(QtCore.QSize(500, 16777215))
@@ -140,10 +175,20 @@ class Ui_MainWindow(object):
 "    font-size: 15px;\n"
 "}")
         self.Combo_Resolution.setObjectName("Combo_Resolution")
-        self.gridLayout.addWidget(self.Combo_Resolution, 0, 2, 1, 1)
-        self.LineEdit_webhook = QtWidgets.QLineEdit(self.green_frame)
-        self.LineEdit_webhook.setMaximumSize(QtCore.QSize(500, 16777215))
-        self.LineEdit_webhook.setStyleSheet("QLineEdit {\n"
+        self.gridLayout.addWidget(self.Combo_Resolution, 1, 2, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.green_frame)
+        self.label_7.setStyleSheet("QLabel {\n"
+"    color: rgb(255, 137, 1);\n"
+"    font-size: 20px;\n"
+"    font-family: \"Arial Black\";\n"
+"    background: transparent;\n"
+"}")
+        self.label_7.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.label_7, 0, 1, 1, 1)
+        self.LineEdit_identifier = QtWidgets.QLineEdit(self.green_frame)
+        self.LineEdit_identifier.setMaximumSize(QtCore.QSize(500, 16777215))
+        self.LineEdit_identifier.setStyleSheet("QLineEdit {\n"
 "border: 0px solid rgb(45, 45, 45);\n"
 "border-radius: 10px;\n"
 "padding: 15px;\n"
@@ -162,17 +207,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.LineEdit_webhook.setObjectName("LineEdit_webhook")
-        self.gridLayout.addWidget(self.LineEdit_webhook, 1, 2, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.green_frame)
-        self.label_4.setStyleSheet("QLabel {\n"
-"    color: rgb(255, 137, 1);\n"
-"    font-size: 20px;\n"
-"    font-family: \"Arial Black\";\n"
-"    background: transparent;\n"
-"}")
-        self.label_4.setObjectName("label_4")
-        self.gridLayout.addWidget(self.label_4, 1, 1, 1, 1)
+        self.LineEdit_identifier.setObjectName("LineEdit_identifier")
+        self.gridLayout.addWidget(self.LineEdit_identifier, 0, 2, 1, 1)
         self.verticalLayout.addWidget(self.green_frame)
         self.red = QtWidgets.QFrame(self.centralwidget)
         self.red.setMinimumSize(QtCore.QSize(0, 0))
@@ -328,8 +364,9 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Ps - Log Bot"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Prime Survivor<br/>Log Bot</span></p></body></html>"))
-        self.label_3.setText(_translate("MainWindow", "Select Your Resolution :"))
-        self.label_4.setText(_translate("MainWindow", "webhook :"))
+        self.label_3.setText(_translate("MainWindow", "Select Your Resolution : "))
+        self.label_4.setText(_translate("MainWindow", "Webhook : "))
+        self.label_7.setText(_translate("MainWindow", "Identifier : "))
         self.btn_start.setText(_translate("MainWindow", "Start"))
         self.check_test.setToolTip(_translate("MainWindow", "Activate test mode.\n"
 "When activated, the bot will send events even without actual validation."))

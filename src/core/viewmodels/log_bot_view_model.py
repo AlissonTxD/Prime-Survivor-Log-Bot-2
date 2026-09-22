@@ -22,18 +22,18 @@ class LogBotViewModel:
         self.stop_event = threading.Event()
         self.log_bot_thread = None
 
-    def start_log_bot(self, cutcoords, api):
+    def start_log_bot(self, cutcoords, api, identifier):
 
         # Garante que um novo Start possa iniciar novamente
         self.stop_event.clear()
 
         self.log_bot_thread = threading.Thread(
-            target=self.run, args=(cutcoords, api), daemon=True
+            target=self.run, args=(cutcoords, api,identifier), daemon=True
         )
 
         self.log_bot_thread.start()
 
-    def run(self, coords, webhook):
+    def run(self, coords, webhook, identifier):
 
         loops_for_minute = 60 // CHECK_INTERVAL_SECONDS
 
@@ -55,7 +55,7 @@ class LogBotViewModel:
                     elif self.event_counter >= 3:
                         message = f"# @here {text}"
 
-                    self.discord.send_msg(message)
+                    self.discord.send_msg(message, identifier)
 
                     self.event_counter += 1
                     self.reset_counter = loops_for_minute * 10

@@ -1,5 +1,6 @@
 {
     "webhook": "api",
+    "identifier": "my server",
     "resolution": {
         "1920x1080": [
             770,
