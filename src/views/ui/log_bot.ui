@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>637</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ps - Log Bot</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../assets/logbot.ico</normaloff>../../assets/logbot.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 137, 1);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(15, 15, 15);
+
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="blue_frame">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>121</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*background-color: rgb(0, 12, 255);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>Arial Black</family>
+           <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: rgb(255, 137, 1);
+    font-size: 30px;
+    font-family: &quot;Arial Black&quot;;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Prime Survivor&lt;br/&gt;Log Bot&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="imagemlogo">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>250</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../assets/log_bot_logo.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <property name="indent">
+          <number>-1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="green_frame">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>130</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>130</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*background-color: rgb(0, 255, 42);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: rgb(255, 137, 1);
+    font-size: 20px;
+    font-family: &quot;Arial Black&quot;;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>Select Your Resolution :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="0">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="2">
+        <widget class="QComboBox" name="Combo_Resolution">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+    border: 0px solid rgb(45, 45, 45);
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(24, 24, 24);
+    color: rgb(80, 80, 80);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+QComboBox:hover {
+    border: 2px solid rgb(27, 27, 27);
+}
+
+QComboBox:focus {
+    border: 2px solid rgb(255, 137, 1);
+    color: rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 30px;
+}
+
+QComboBox::down-arrow {
+    width: 14px;
+    height: 14px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid rgb(27, 27, 27);
+    background-color: rgb(24, 24, 24);
+    selection-background-color: rgb(255, 137, 1);
+    selection-color: rgb(255, 255, 255);
+    color: rgb(220, 220, 220);
+    font-size: 15px;
+}</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="LineEdit_webhook">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+border: 0px solid rgb(45, 45, 45);
+border-radius: 10px;
+padding: 15px;
+background-color: rgb(24, 24, 24);
+color: rgb(80, 80, 80);
+	font: 87 12pt &quot;Arial Black&quot;;
+}
+
+QLineEdit:hover {
+border: 2px solid rgb(27, 27, 27);
+}
+
+QLineEdit:focus {
+border: 2px solid rgb(255, 137, 1);
+color: rgb(255, 255, 255)
+}
+
+</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    color: rgb(255, 137, 1);
+    font-size: 20px;
+    font-family: &quot;Arial Black&quot;;
+    background: transparent;
+}</string>
+         </property>
+         <property name="text">
+          <string>webhook :</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="red">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>92</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*background-color: rgb(255, 0, 4);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_start">
+         <property name="minimumSize">
+          <size>
+           <width>285</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: rgb(255, 137, 1);
+border: 3px outset rgb(93, 49, 0);
+border-radius: 10px;
+color: rgb(15, 15, 15);
+font-size: 20px;
+font-family: &quot;Arial Black&quot;;
+}
+
+
+QPushButton:hover{
+color: rgb(255, 17, 0);
+background-color: rgb(215, 97, 0);
+}
+
+QPushButton:pressed{
+border: 3px inset rgb(93, 49, 0);
+color: rgb(15, 15, 15);
+background-color: rgb(255, 17, 0);
+}
+
+QPushButton:disabled {
+background-color: #cccccc; /* Cinza */
+border: 2px solid #999999;
+color: #666666; /* Texto cinza escuro */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="check_test">
+         <property name="maximumSize">
+          <size>
+           <width>114</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Activate test mode.
+When activated, the bot will send events even without actual validation.</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox {
+    color: rgb(120, 120, 120);
+    font-size: 16px;
+    font-family: &quot;Arial&quot;;
+    spacing: 10px;
+}
+
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: rgb(24, 24, 24);
+    border: 2px solid rgb(45, 45, 45);
+}
+
+QCheckBox::indicator:hover {
+    border: 2px solid rgb(255, 137, 1);
+}
+
+QCheckBox::indicator:checked {
+    background-color: rgb(255, 137, 1);
+    border: 2px solid rgb(255, 137, 1);
+}
+
+QCheckBox::indicator:checked:hover {
+    background-color: rgb(255, 160, 40);
+    border: 2px solid rgb(255, 160, 40);
+}
+
+QCheckBox:checked {
+    color: rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>Test Mode</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_stop">
+         <property name="minimumSize">
+          <size>
+           <width>285</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: rgb(255, 137, 1);
+border: 3px outset rgb(93, 49, 0);
+border-radius: 10px;
+color: rgb(15, 15, 15);
+font-size: 20px;
+font-family: &quot;Arial Black&quot;;
+}
+
+
+QPushButton:hover{
+color: rgb(255, 17, 0);
+background-color: rgb(215, 97, 0);
+}
+
+QPushButton:pressed{
+border: 3px inset rgb(93, 49, 0);
+color: rgb(15, 15, 15);
+background-color: rgb(255, 17, 0);
+}
+
+QPushButton:disabled {
+background-color: #cccccc; /* Cinza */
+border: 2px solid #999999;
+color: #666666; /* Texto cinza escuro */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Stop</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="yellow_frame">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>54</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*background-color: rgb(251, 255, 0);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true">    color: rgb(255, 137, 1);</string>
+         </property>
+         <property name="text">
+          <string>Johan is bob</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="small_logo_label">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../assets/ps_small_logo.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">    color: rgb(255, 137, 1);</string>
+         </property>
+         <property name="text">
+          <string>krz also is bob</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
