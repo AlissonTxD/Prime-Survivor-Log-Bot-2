@@ -1,5 +1,6 @@
 import base64
 import logging
+from pathlib import Path
 
 import requests
 
@@ -9,10 +10,10 @@ from .base_model import BaseModel
 class DiscordModel(BaseModel):
     def __init__(self, webhook_url):
         super().__init__()
-
+        project_path = Path(__file__).resolve().parents[2]
         self.webhook_url = webhook_url
         self.webhook_name = "Prime Survivor Log Bot"
-        self.avatar_path = "src/assets/log_bot_logo.png"
+        self.avatar_path = project_path / "assets" / "log_bot_logo.png"
 
     def config_webhook_profile(self):
         try:
@@ -45,7 +46,7 @@ class DiscordModel(BaseModel):
         try:
             response = requests.post(
                 self.webhook_url,
-                json={"content": f"# server:{identifier} :{text}"},
+                json={"content": f"# server: {identifier}: {text}"},
             )
 
             response.raise_for_status()
@@ -53,10 +54,10 @@ class DiscordModel(BaseModel):
             self.log("Mensagem enviada para o Discord.")
 
             # Envia a imagem do log
-            with open(self.subimage_path, "rb") as image:
+            with open(self.main_image_path, "rb") as image:
                 response = requests.post(
                     self.webhook_url,
-                    files={"file": ("subimage.png", image, "image/png")},
+                    files={"file": ("main_image.png", image, "image/png")},
                 )
 
             response.raise_for_status()
