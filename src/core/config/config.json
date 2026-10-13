@@ -1,24 +1,12 @@
 {
-    "webhook": "https://discord.com/api/webhooks/1551991685880348763/1J6McJ7a9zOvgbysBeORNk1f7QHcAhA5bqJtKxGg1Zls7d9Oy9_IXqoyyoda7ls_7AnD",
-    "identifier": "9639",
+    "webhook": "your hook",
+    "identifier": "johan gay",
     "resolution": {
-        "1920x1080": [
-            770,
-            214,
-            1125,
-            255
-        ],
         "2560x1440": [
             1016,
             266,
             1520,
             583
-        ],
-        "3440x1440": [
-            1475,
-            283,
-            1945,
-            339
         ]
     },
     "last_resolution": "2560x1440"

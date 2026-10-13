@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QMainWindow
 
 from src.core.viewmodels.log_bot_view_model import LogBotViewModel
@@ -12,6 +15,8 @@ class LogBotView(QMainWindow):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.__load_img_on_exe()
 
         self.ui.btn_stop.setDisabled(True)
 
@@ -64,3 +69,20 @@ class LogBotView(QMainWindow):
         self.config["webhook"] = self.ui.LineEdit_webhook.text()
         self.config["identifier"] = self.ui.LineEdit_identifier.text()
         self.log_bot_vm.config.save_config(self.config)
+
+    def __load_img_on_exe(self):
+        project_path = Path(__file__).resolve().parents[1]
+        print("Project Path:", project_path)
+        assets_path = project_path / "assets"
+
+        self.ui.label_2.setPixmap(
+            QPixmap(str(assets_path / "log_bot_logo.png"))
+        )
+
+        self.ui.small_logo_label.setPixmap(
+            QPixmap(str(assets_path / "ps_small_logo.png"))
+        )
+
+        self.setWindowIcon(
+            QIcon(str(assets_path / "logbot.ico"))
+    )

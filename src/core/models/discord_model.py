@@ -43,10 +43,9 @@ class DiscordModel(BaseModel):
 
     def send_msg(self, text, identifier):
         try:
-            # Envia a mensagem
             response = requests.post(
                 self.webhook_url,
-                json={"content": f"server:{identifier} :{text}"},
+                json={"content": f"# server:{identifier} :{text}"},
             )
 
             response.raise_for_status()

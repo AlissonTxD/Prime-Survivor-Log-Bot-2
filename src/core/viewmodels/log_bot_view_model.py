@@ -47,13 +47,13 @@ class LogBotViewModel:
 
             if self.validation.validate_log(text):
                 if self.__validade_new(text):
-                    message = f"# {text}"
+                    message = f"{text}"
 
                     if self.event_counter > 5:
-                        message = f"# @everyone {text}"
+                        message = f"@everyone {text}"
 
                     elif self.event_counter >= 3:
-                        message = f"# @here {text}"
+                        message = f"@here {text}"
 
                     self.discord.send_msg(message, identifier)
 
